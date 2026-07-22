@@ -5,13 +5,13 @@
 class Seedify < Formula
   desc "Convert SSH keys to BIP-39 seed phrases"
   homepage "https://github.com/ZenTenApp/seedify"
-  version "1.33.0"
+  version "1.34.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ZenTenApp/seedify/releases/download/v1.33.0/seedify_1.33.0_Darwin_x86_64.tar.gz"
-      sha256 "be128a1f55f7bd25c11f3c0eeb1e0e39c77b20bdfcd5a974c06dca0533cfb6ad"
+      url "https://github.com/ZenTenApp/seedify/releases/download/v1.34.0/seedify_1.34.0_Darwin_x86_64.tar.gz"
+      sha256 "721c2d2acf5865a79d316495b0a367b17d1418d0336bfffa60effcdd0ee29009"
 
       define_method(:install) do
         bin.install "seedify"
@@ -22,8 +22,8 @@ class Seedify < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ZenTenApp/seedify/releases/download/v1.33.0/seedify_1.33.0_Darwin_arm64.tar.gz"
-      sha256 "5aa29b57863bef0cca38f18e748db39cdc7958a0a3f4ee432caf7b472409181a"
+      url "https://github.com/ZenTenApp/seedify/releases/download/v1.34.0/seedify_1.34.0_Darwin_arm64.tar.gz"
+      sha256 "9b1bc4e22c6f00b1dac4b7f18d78f02f3620a4117e62d17c5a2ca11a9acb8110"
 
       define_method(:install) do
         bin.install "seedify"
@@ -37,8 +37,8 @@ class Seedify < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/seedify/releases/download/v1.33.0/seedify_1.33.0_Linux_x86_64.tar.gz"
-      sha256 "b76d0de186fc8a31c3a34b130f9b988d9864b104a37f4a8ffd6f963d6e1588d2"
+      url "https://github.com/ZenTenApp/seedify/releases/download/v1.34.0/seedify_1.34.0_Linux_x86_64.tar.gz"
+      sha256 "acba28a583da217dda65eaf8865a7b8e80bc18b0644639506d1d9603bcf689d7"
       define_method(:install) do
         bin.install "seedify"
         bash_completion.install "completions/seedify.bash" => "seedify"
@@ -48,8 +48,8 @@ class Seedify < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/seedify/releases/download/v1.33.0/seedify_1.33.0_Linux_armv7.tar.gz"
-      sha256 "fbbe416be37cab653420e43ba8130a84b14ee6c826af2fa5cad743f7a55a33c7"
+      url "https://github.com/ZenTenApp/seedify/releases/download/v1.34.0/seedify_1.34.0_Linux_armv7.tar.gz"
+      sha256 "5a2c790310676ec138396676b18c78abd2f1ad99997c43cb705dde0b20b490cb"
       define_method(:install) do
         bin.install "seedify"
         bash_completion.install "completions/seedify.bash" => "seedify"
@@ -59,8 +59,8 @@ class Seedify < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/seedify/releases/download/v1.33.0/seedify_1.33.0_Linux_arm64.tar.gz"
-      sha256 "3a238c49545eafd64bdd99f29e03784f89b8294dd225850f455e398fbf20689f"
+      url "https://github.com/ZenTenApp/seedify/releases/download/v1.34.0/seedify_1.34.0_Linux_arm64.tar.gz"
+      sha256 "246d9c0f7d56caebd0bb063bb36793a4d5d145b359111bc42a5656c788ccc69e"
       define_method(:install) do
         bin.install "seedify"
         bash_completion.install "completions/seedify.bash" => "seedify"
