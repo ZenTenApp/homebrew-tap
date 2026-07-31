@@ -5,68 +5,93 @@
 class Meltify < Formula
   desc "Export compact Nostr/SSH/MELT seed material from Ed25519 OpenSSH keys"
   homepage "https://github.com/ZenTenApp/meltify"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.2/meltify_0.1.2_Darwin_x86_64.tar.gz"
-      sha256 "a64218a73e090607f16b8de6dbb2c61d6b64fbf3cd0a9fea9e1bc141e08e81aa"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.3/meltify_0.1.3_Darwin_x86_64.tar.gz"
+      sha256 "8c51d32586fda8fd60cdcbaee7f4c8f6d7a2087a5a0f150bf432c42105490e05"
 
       define_method(:install) do
         bin.install "meltify"
+        bin.install "meltify-beldex"
         bash_completion.install "completions/meltify.bash" => "meltify"
+        bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
+        zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
         fish_completion.install "completions/meltify.fish"
+        fish_completion.install "completions/meltify-beldex.fish"
         man1.install "manpages/meltify.1.gz"
+        man1.install "manpages/meltify-beldex.1.gz"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.2/meltify_0.1.2_Darwin_arm64.tar.gz"
-      sha256 "b6d3132868071a136246b3780f243d5f96cb3599aa7c8e14702e736536190a59"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.3/meltify_0.1.3_Darwin_arm64.tar.gz"
+      sha256 "05a7cbfd7684074a2a9985b9d054ca88db93082a2bd1e779660cb7b0788aa4f1"
 
       define_method(:install) do
         bin.install "meltify"
+        bin.install "meltify-beldex"
         bash_completion.install "completions/meltify.bash" => "meltify"
+        bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
+        zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
         fish_completion.install "completions/meltify.fish"
+        fish_completion.install "completions/meltify-beldex.fish"
         man1.install "manpages/meltify.1.gz"
+        man1.install "manpages/meltify-beldex.1.gz"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.2/meltify_0.1.2_Linux_x86_64.tar.gz"
-      sha256 "3012ea530ea5bf919212d3f95ac162d7bb584eaa96da7061f399614d2b8298fe"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.3/meltify_0.1.3_Linux_x86_64.tar.gz"
+      sha256 "685ac99e65bea610ecda5802f2394824571b107553ac257f6b4a14a456b7310d"
       define_method(:install) do
         bin.install "meltify"
+        bin.install "meltify-beldex"
         bash_completion.install "completions/meltify.bash" => "meltify"
+        bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
+        zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
         fish_completion.install "completions/meltify.fish"
+        fish_completion.install "completions/meltify-beldex.fish"
         man1.install "manpages/meltify.1.gz"
+        man1.install "manpages/meltify-beldex.1.gz"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.2/meltify_0.1.2_Linux_armv7.tar.gz"
-      sha256 "73b7a2494e96d24eb91833a2d5c5213564f4e4964489762e7863166143a2a367"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.3/meltify_0.1.3_Linux_armv7.tar.gz"
+      sha256 "41e759d725eac917735e15907bff492b0d243541675c1c61683cef54f45bd6a2"
       define_method(:install) do
         bin.install "meltify"
+        bin.install "meltify-beldex"
         bash_completion.install "completions/meltify.bash" => "meltify"
+        bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
+        zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
         fish_completion.install "completions/meltify.fish"
+        fish_completion.install "completions/meltify-beldex.fish"
         man1.install "manpages/meltify.1.gz"
+        man1.install "manpages/meltify-beldex.1.gz"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.2/meltify_0.1.2_Linux_arm64.tar.gz"
-      sha256 "0a3d6ab3b27440acd651d06f1d1a51a38928a1696c48d7f0609a36c9f33e1640"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.3/meltify_0.1.3_Linux_arm64.tar.gz"
+      sha256 "ccbfd18c58f472ab39d94b8668edc2c4828186367dc0346b462896bda553230a"
       define_method(:install) do
         bin.install "meltify"
+        bin.install "meltify-beldex"
         bash_completion.install "completions/meltify.bash" => "meltify"
+        bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
+        zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
         fish_completion.install "completions/meltify.fish"
+        fish_completion.install "completions/meltify-beldex.fish"
         man1.install "manpages/meltify.1.gz"
+        man1.install "manpages/meltify-beldex.1.gz"
       end
     end
   end
