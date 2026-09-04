@@ -5,13 +5,13 @@
 class Meltify < Formula
   desc "Export compact Nostr/SSH/MELT seed material from Ed25519 OpenSSH keys"
   homepage "https://github.com/ZenTenApp/meltify"
-  version "0.1.9"
+  version "0.1.10"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.9/meltify_0.1.9_Darwin_x86_64.tar.gz"
-      sha256 "753e389293283a22c79989ded457fc7b039e0eec030b8699616cfaecd86a66fe"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.10/meltify_0.1.10_Darwin_x86_64.tar.gz"
+      sha256 "a3355aee8c83b8c1dcee23914d3fcb802d2716b39047d6106230c317e6d0dd73"
 
       define_method(:install) do
         bin.install "meltify"
@@ -47,8 +47,8 @@ class Meltify < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.9/meltify_0.1.9_Darwin_arm64.tar.gz"
-      sha256 "e97e2d8da7c8205331dbde85d0b7201e8602ebde01c669274569c4ef794b26b1"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.10/meltify_0.1.10_Darwin_arm64.tar.gz"
+      sha256 "a30de434476fea71976e5a6c95173be96aa53ee98e323b7188dee7aadb4b1ce7"
 
       define_method(:install) do
         bin.install "meltify"
@@ -87,8 +87,8 @@ class Meltify < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.9/meltify_0.1.9_Linux_x86_64.tar.gz"
-      sha256 "cc7265aa6c114ec562d19041af903b63b7e8e28d4e02ac754a6f63075cc2c92f"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.10/meltify_0.1.10_Linux_x86_64.tar.gz"
+      sha256 "4abf200e0491c511307782722b4f65a1880823873ee0e862167fa2a617c4eff3"
       define_method(:install) do
         bin.install "meltify"
         bin.install "meltify-brave"
@@ -123,8 +123,8 @@ class Meltify < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.9/meltify_0.1.9_Linux_armv7.tar.gz"
-      sha256 "2a6a592e09977293ec9e015426c9e014b84769d93d9c337ceba68133664e854b"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.10/meltify_0.1.10_Linux_armv7.tar.gz"
+      sha256 "35d978678e27a1379adf3dd958739b3715035c39fdbe13a2f3ac70544af69bb6"
       define_method(:install) do
         bin.install "meltify"
         bin.install "meltify-brave"
@@ -159,8 +159,8 @@ class Meltify < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.9/meltify_0.1.9_Linux_arm64.tar.gz"
-      sha256 "74fa069e17a78c510b684a50375212415fc52aacb9f58d7ec28a655e753b6ec3"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.10/meltify_0.1.10_Linux_arm64.tar.gz"
+      sha256 "e21cee59404024ee37251670a37f704c152077b2e61d78cf31e9778c808a33a2"
       define_method(:install) do
         bin.install "meltify"
         bin.install "meltify-brave"
