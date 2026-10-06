@@ -5,13 +5,13 @@
 class Meltify < Formula
   desc "Export compact Nostr/SSH/MELT seed material from Ed25519 OpenSSH keys"
   homepage "https://github.com/ZenTenApp/meltify"
-  version "0.1.17"
+  version "0.1.18"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.17/meltify_0.1.17_Darwin_x86_64.tar.gz"
-      sha256 "e0f25202eb0b03bbe933feb463cb5840d33634e94daa30c84b6e53b3803b848e"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.18/meltify_0.1.18_Darwin_x86_64.tar.gz"
+      sha256 "fe0702198892113fdef4303ade30183a0241a0278c20b5c0427cf34f6e987d1d"
 
       define_method(:install) do
         bin.install "meltify"
@@ -22,6 +22,8 @@ class Meltify < Formula
         bin.install "meltify-info"
         bin.install "meltify-pgp"
         bin.install "meltify-onion"
+        bin.install "meltify-rsa"
+        bin.install "meltify-dkim"
         bash_completion.install "completions/meltify.bash" => "meltify"
         bash_completion.install "completions/meltify-brave.bash" => "meltify-brave"
         bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
@@ -30,6 +32,8 @@ class Meltify < Formula
         bash_completion.install "completions/meltify-info.bash" => "meltify-info"
         bash_completion.install "completions/meltify-pgp.bash" => "meltify-pgp"
         bash_completion.install "completions/meltify-onion.bash" => "meltify-onion"
+        bash_completion.install "completions/meltify-rsa.bash" => "meltify-rsa"
+        bash_completion.install "completions/meltify-dkim.bash" => "meltify-dkim"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
         zsh_completion.install "completions/meltify-brave.zsh" => "_meltify-brave"
         zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
@@ -38,6 +42,8 @@ class Meltify < Formula
         zsh_completion.install "completions/meltify-info.zsh" => "_meltify-info"
         zsh_completion.install "completions/meltify-pgp.zsh" => "_meltify-pgp"
         zsh_completion.install "completions/meltify-onion.zsh" => "_meltify-onion"
+        zsh_completion.install "completions/meltify-rsa.zsh" => "_meltify-rsa"
+        zsh_completion.install "completions/meltify-dkim.zsh" => "_meltify-dkim"
         fish_completion.install "completions/meltify.fish"
         fish_completion.install "completions/meltify-brave.fish"
         fish_completion.install "completions/meltify-beldex.fish"
@@ -46,6 +52,8 @@ class Meltify < Formula
         fish_completion.install "completions/meltify-info.fish"
         fish_completion.install "completions/meltify-pgp.fish"
         fish_completion.install "completions/meltify-onion.fish"
+        fish_completion.install "completions/meltify-rsa.fish"
+        fish_completion.install "completions/meltify-dkim.fish"
         man1.install "manpages/meltify.1.gz"
         man1.install "manpages/meltify-brave.1.gz"
         man1.install "manpages/meltify-beldex.1.gz"
@@ -54,11 +62,13 @@ class Meltify < Formula
         man1.install "manpages/meltify-info.1.gz"
         man1.install "manpages/meltify-pgp.1.gz"
         man1.install "manpages/meltify-onion.1.gz"
+        man1.install "manpages/meltify-rsa.1.gz"
+        man1.install "manpages/meltify-dkim.1.gz"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.17/meltify_0.1.17_Darwin_arm64.tar.gz"
-      sha256 "2bed3b918f9fce4e3301f6178de8d6c6adc1dda587dfbb6be66614b863f19b65"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.18/meltify_0.1.18_Darwin_arm64.tar.gz"
+      sha256 "2b50b6b1a7997e299457ceddca26d0912441a303b1f4c3bc55d56dcd74c14b2b"
 
       define_method(:install) do
         bin.install "meltify"
@@ -69,6 +79,8 @@ class Meltify < Formula
         bin.install "meltify-info"
         bin.install "meltify-pgp"
         bin.install "meltify-onion"
+        bin.install "meltify-rsa"
+        bin.install "meltify-dkim"
         bash_completion.install "completions/meltify.bash" => "meltify"
         bash_completion.install "completions/meltify-brave.bash" => "meltify-brave"
         bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
@@ -77,6 +89,8 @@ class Meltify < Formula
         bash_completion.install "completions/meltify-info.bash" => "meltify-info"
         bash_completion.install "completions/meltify-pgp.bash" => "meltify-pgp"
         bash_completion.install "completions/meltify-onion.bash" => "meltify-onion"
+        bash_completion.install "completions/meltify-rsa.bash" => "meltify-rsa"
+        bash_completion.install "completions/meltify-dkim.bash" => "meltify-dkim"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
         zsh_completion.install "completions/meltify-brave.zsh" => "_meltify-brave"
         zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
@@ -85,6 +99,8 @@ class Meltify < Formula
         zsh_completion.install "completions/meltify-info.zsh" => "_meltify-info"
         zsh_completion.install "completions/meltify-pgp.zsh" => "_meltify-pgp"
         zsh_completion.install "completions/meltify-onion.zsh" => "_meltify-onion"
+        zsh_completion.install "completions/meltify-rsa.zsh" => "_meltify-rsa"
+        zsh_completion.install "completions/meltify-dkim.zsh" => "_meltify-dkim"
         fish_completion.install "completions/meltify.fish"
         fish_completion.install "completions/meltify-brave.fish"
         fish_completion.install "completions/meltify-beldex.fish"
@@ -93,6 +109,8 @@ class Meltify < Formula
         fish_completion.install "completions/meltify-info.fish"
         fish_completion.install "completions/meltify-pgp.fish"
         fish_completion.install "completions/meltify-onion.fish"
+        fish_completion.install "completions/meltify-rsa.fish"
+        fish_completion.install "completions/meltify-dkim.fish"
         man1.install "manpages/meltify.1.gz"
         man1.install "manpages/meltify-brave.1.gz"
         man1.install "manpages/meltify-beldex.1.gz"
@@ -101,14 +119,16 @@ class Meltify < Formula
         man1.install "manpages/meltify-info.1.gz"
         man1.install "manpages/meltify-pgp.1.gz"
         man1.install "manpages/meltify-onion.1.gz"
+        man1.install "manpages/meltify-rsa.1.gz"
+        man1.install "manpages/meltify-dkim.1.gz"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.17/meltify_0.1.17_Linux_x86_64.tar.gz"
-      sha256 "cf68479ac3a56bc6f965497f1e21c8ffb74414501b309a2ea187986b421c59e9"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.18/meltify_0.1.18_Linux_x86_64.tar.gz"
+      sha256 "581bd7a8a07c7fe118fdfe0c7cd8dd2a3dd087503fff31360675fcaad94f092f"
       define_method(:install) do
         bin.install "meltify"
         bin.install "meltify-brave"
@@ -118,6 +138,8 @@ class Meltify < Formula
         bin.install "meltify-info"
         bin.install "meltify-pgp"
         bin.install "meltify-onion"
+        bin.install "meltify-rsa"
+        bin.install "meltify-dkim"
         bash_completion.install "completions/meltify.bash" => "meltify"
         bash_completion.install "completions/meltify-brave.bash" => "meltify-brave"
         bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
@@ -126,6 +148,8 @@ class Meltify < Formula
         bash_completion.install "completions/meltify-info.bash" => "meltify-info"
         bash_completion.install "completions/meltify-pgp.bash" => "meltify-pgp"
         bash_completion.install "completions/meltify-onion.bash" => "meltify-onion"
+        bash_completion.install "completions/meltify-rsa.bash" => "meltify-rsa"
+        bash_completion.install "completions/meltify-dkim.bash" => "meltify-dkim"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
         zsh_completion.install "completions/meltify-brave.zsh" => "_meltify-brave"
         zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
@@ -134,6 +158,8 @@ class Meltify < Formula
         zsh_completion.install "completions/meltify-info.zsh" => "_meltify-info"
         zsh_completion.install "completions/meltify-pgp.zsh" => "_meltify-pgp"
         zsh_completion.install "completions/meltify-onion.zsh" => "_meltify-onion"
+        zsh_completion.install "completions/meltify-rsa.zsh" => "_meltify-rsa"
+        zsh_completion.install "completions/meltify-dkim.zsh" => "_meltify-dkim"
         fish_completion.install "completions/meltify.fish"
         fish_completion.install "completions/meltify-brave.fish"
         fish_completion.install "completions/meltify-beldex.fish"
@@ -142,6 +168,8 @@ class Meltify < Formula
         fish_completion.install "completions/meltify-info.fish"
         fish_completion.install "completions/meltify-pgp.fish"
         fish_completion.install "completions/meltify-onion.fish"
+        fish_completion.install "completions/meltify-rsa.fish"
+        fish_completion.install "completions/meltify-dkim.fish"
         man1.install "manpages/meltify.1.gz"
         man1.install "manpages/meltify-brave.1.gz"
         man1.install "manpages/meltify-beldex.1.gz"
@@ -150,11 +178,13 @@ class Meltify < Formula
         man1.install "manpages/meltify-info.1.gz"
         man1.install "manpages/meltify-pgp.1.gz"
         man1.install "manpages/meltify-onion.1.gz"
+        man1.install "manpages/meltify-rsa.1.gz"
+        man1.install "manpages/meltify-dkim.1.gz"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.17/meltify_0.1.17_Linux_armv7.tar.gz"
-      sha256 "8b7b91737f5ac85bcef37bf49981ce63ec9b3fd93a83d111d95d7abaa720bd6d"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.18/meltify_0.1.18_Linux_armv7.tar.gz"
+      sha256 "f96415b608b2d0da403a0440fb47c42ce7171ed2756fac8370fa221fc5634c90"
       define_method(:install) do
         bin.install "meltify"
         bin.install "meltify-brave"
@@ -164,6 +194,8 @@ class Meltify < Formula
         bin.install "meltify-info"
         bin.install "meltify-pgp"
         bin.install "meltify-onion"
+        bin.install "meltify-rsa"
+        bin.install "meltify-dkim"
         bash_completion.install "completions/meltify.bash" => "meltify"
         bash_completion.install "completions/meltify-brave.bash" => "meltify-brave"
         bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
@@ -172,6 +204,8 @@ class Meltify < Formula
         bash_completion.install "completions/meltify-info.bash" => "meltify-info"
         bash_completion.install "completions/meltify-pgp.bash" => "meltify-pgp"
         bash_completion.install "completions/meltify-onion.bash" => "meltify-onion"
+        bash_completion.install "completions/meltify-rsa.bash" => "meltify-rsa"
+        bash_completion.install "completions/meltify-dkim.bash" => "meltify-dkim"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
         zsh_completion.install "completions/meltify-brave.zsh" => "_meltify-brave"
         zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
@@ -180,6 +214,8 @@ class Meltify < Formula
         zsh_completion.install "completions/meltify-info.zsh" => "_meltify-info"
         zsh_completion.install "completions/meltify-pgp.zsh" => "_meltify-pgp"
         zsh_completion.install "completions/meltify-onion.zsh" => "_meltify-onion"
+        zsh_completion.install "completions/meltify-rsa.zsh" => "_meltify-rsa"
+        zsh_completion.install "completions/meltify-dkim.zsh" => "_meltify-dkim"
         fish_completion.install "completions/meltify.fish"
         fish_completion.install "completions/meltify-brave.fish"
         fish_completion.install "completions/meltify-beldex.fish"
@@ -188,6 +224,8 @@ class Meltify < Formula
         fish_completion.install "completions/meltify-info.fish"
         fish_completion.install "completions/meltify-pgp.fish"
         fish_completion.install "completions/meltify-onion.fish"
+        fish_completion.install "completions/meltify-rsa.fish"
+        fish_completion.install "completions/meltify-dkim.fish"
         man1.install "manpages/meltify.1.gz"
         man1.install "manpages/meltify-brave.1.gz"
         man1.install "manpages/meltify-beldex.1.gz"
@@ -196,11 +234,13 @@ class Meltify < Formula
         man1.install "manpages/meltify-info.1.gz"
         man1.install "manpages/meltify-pgp.1.gz"
         man1.install "manpages/meltify-onion.1.gz"
+        man1.install "manpages/meltify-rsa.1.gz"
+        man1.install "manpages/meltify-dkim.1.gz"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.17/meltify_0.1.17_Linux_arm64.tar.gz"
-      sha256 "76bab7a851f7d4ad84c874be6dda90fd068e2f2353ee6782b2562cda3ffad4aa"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.18/meltify_0.1.18_Linux_arm64.tar.gz"
+      sha256 "96ca1820124957576e13340ab5a4505eebff492b52bd4d94e6aad531d52d6cb9"
       define_method(:install) do
         bin.install "meltify"
         bin.install "meltify-brave"
@@ -210,6 +250,8 @@ class Meltify < Formula
         bin.install "meltify-info"
         bin.install "meltify-pgp"
         bin.install "meltify-onion"
+        bin.install "meltify-rsa"
+        bin.install "meltify-dkim"
         bash_completion.install "completions/meltify.bash" => "meltify"
         bash_completion.install "completions/meltify-brave.bash" => "meltify-brave"
         bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
@@ -218,6 +260,8 @@ class Meltify < Formula
         bash_completion.install "completions/meltify-info.bash" => "meltify-info"
         bash_completion.install "completions/meltify-pgp.bash" => "meltify-pgp"
         bash_completion.install "completions/meltify-onion.bash" => "meltify-onion"
+        bash_completion.install "completions/meltify-rsa.bash" => "meltify-rsa"
+        bash_completion.install "completions/meltify-dkim.bash" => "meltify-dkim"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
         zsh_completion.install "completions/meltify-brave.zsh" => "_meltify-brave"
         zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
@@ -226,6 +270,8 @@ class Meltify < Formula
         zsh_completion.install "completions/meltify-info.zsh" => "_meltify-info"
         zsh_completion.install "completions/meltify-pgp.zsh" => "_meltify-pgp"
         zsh_completion.install "completions/meltify-onion.zsh" => "_meltify-onion"
+        zsh_completion.install "completions/meltify-rsa.zsh" => "_meltify-rsa"
+        zsh_completion.install "completions/meltify-dkim.zsh" => "_meltify-dkim"
         fish_completion.install "completions/meltify.fish"
         fish_completion.install "completions/meltify-brave.fish"
         fish_completion.install "completions/meltify-beldex.fish"
@@ -234,6 +280,8 @@ class Meltify < Formula
         fish_completion.install "completions/meltify-info.fish"
         fish_completion.install "completions/meltify-pgp.fish"
         fish_completion.install "completions/meltify-onion.fish"
+        fish_completion.install "completions/meltify-rsa.fish"
+        fish_completion.install "completions/meltify-dkim.fish"
         man1.install "manpages/meltify.1.gz"
         man1.install "manpages/meltify-brave.1.gz"
         man1.install "manpages/meltify-beldex.1.gz"
@@ -242,6 +290,8 @@ class Meltify < Formula
         man1.install "manpages/meltify-info.1.gz"
         man1.install "manpages/meltify-pgp.1.gz"
         man1.install "manpages/meltify-onion.1.gz"
+        man1.install "manpages/meltify-rsa.1.gz"
+        man1.install "manpages/meltify-dkim.1.gz"
       end
     end
   end
