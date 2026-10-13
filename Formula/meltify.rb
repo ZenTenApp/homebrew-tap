@@ -5,13 +5,13 @@
 class Meltify < Formula
   desc "Export compact Nostr/SSH/MELT seed material from Ed25519 OpenSSH keys"
   homepage "https://github.com/ZenTenApp/meltify"
-  version "0.1.20"
+  version "0.1.21"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.20/meltify_0.1.20_Darwin_x86_64.tar.gz"
-      sha256 "6eb02fa00685b19b37c0ddf1f4f4f8d4d6d755e860fa600e7ee5aef17ca9d0eb"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.21/meltify_0.1.21_Darwin_x86_64.tar.gz"
+      sha256 "37775682ebe49373b3307a42eea505a14489b22f7400b2538643d12c7c42850a"
 
       define_method(:install) do
         bin.install "meltify"
@@ -25,6 +25,7 @@ class Meltify < Formula
         bin.install "meltify-rsa"
         bin.install "meltify-dkim"
         bin.install "meltify-dnssec"
+        bin.install "meltify-i2p"
         bash_completion.install "completions/meltify.bash" => "meltify"
         bash_completion.install "completions/meltify-brave.bash" => "meltify-brave"
         bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
@@ -36,6 +37,7 @@ class Meltify < Formula
         bash_completion.install "completions/meltify-rsa.bash" => "meltify-rsa"
         bash_completion.install "completions/meltify-dkim.bash" => "meltify-dkim"
         bash_completion.install "completions/meltify-dnssec.bash" => "meltify-dnssec"
+        bash_completion.install "completions/meltify-i2p.bash" => "meltify-i2p"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
         zsh_completion.install "completions/meltify-brave.zsh" => "_meltify-brave"
         zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
@@ -47,6 +49,7 @@ class Meltify < Formula
         zsh_completion.install "completions/meltify-rsa.zsh" => "_meltify-rsa"
         zsh_completion.install "completions/meltify-dkim.zsh" => "_meltify-dkim"
         zsh_completion.install "completions/meltify-dnssec.zsh" => "_meltify-dnssec"
+        zsh_completion.install "completions/meltify-i2p.zsh" => "_meltify-i2p"
         fish_completion.install "completions/meltify.fish"
         fish_completion.install "completions/meltify-brave.fish"
         fish_completion.install "completions/meltify-beldex.fish"
@@ -58,6 +61,7 @@ class Meltify < Formula
         fish_completion.install "completions/meltify-rsa.fish"
         fish_completion.install "completions/meltify-dkim.fish"
         fish_completion.install "completions/meltify-dnssec.fish"
+        fish_completion.install "completions/meltify-i2p.fish"
         man1.install "manpages/meltify.1.gz"
         man1.install "manpages/meltify-brave.1.gz"
         man1.install "manpages/meltify-beldex.1.gz"
@@ -72,8 +76,8 @@ class Meltify < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.20/meltify_0.1.20_Darwin_arm64.tar.gz"
-      sha256 "4c5a237da074ef2d46297da26f5a6cafae448fc33eb14b5ce4d232227d23416d"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.21/meltify_0.1.21_Darwin_arm64.tar.gz"
+      sha256 "7eadbf68bfbd1254ef1f6424d38bfc65b9c875c5b73d17776feea9ad594dd7fb"
 
       define_method(:install) do
         bin.install "meltify"
@@ -87,6 +91,7 @@ class Meltify < Formula
         bin.install "meltify-rsa"
         bin.install "meltify-dkim"
         bin.install "meltify-dnssec"
+        bin.install "meltify-i2p"
         bash_completion.install "completions/meltify.bash" => "meltify"
         bash_completion.install "completions/meltify-brave.bash" => "meltify-brave"
         bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
@@ -98,6 +103,7 @@ class Meltify < Formula
         bash_completion.install "completions/meltify-rsa.bash" => "meltify-rsa"
         bash_completion.install "completions/meltify-dkim.bash" => "meltify-dkim"
         bash_completion.install "completions/meltify-dnssec.bash" => "meltify-dnssec"
+        bash_completion.install "completions/meltify-i2p.bash" => "meltify-i2p"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
         zsh_completion.install "completions/meltify-brave.zsh" => "_meltify-brave"
         zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
@@ -109,6 +115,7 @@ class Meltify < Formula
         zsh_completion.install "completions/meltify-rsa.zsh" => "_meltify-rsa"
         zsh_completion.install "completions/meltify-dkim.zsh" => "_meltify-dkim"
         zsh_completion.install "completions/meltify-dnssec.zsh" => "_meltify-dnssec"
+        zsh_completion.install "completions/meltify-i2p.zsh" => "_meltify-i2p"
         fish_completion.install "completions/meltify.fish"
         fish_completion.install "completions/meltify-brave.fish"
         fish_completion.install "completions/meltify-beldex.fish"
@@ -120,6 +127,7 @@ class Meltify < Formula
         fish_completion.install "completions/meltify-rsa.fish"
         fish_completion.install "completions/meltify-dkim.fish"
         fish_completion.install "completions/meltify-dnssec.fish"
+        fish_completion.install "completions/meltify-i2p.fish"
         man1.install "manpages/meltify.1.gz"
         man1.install "manpages/meltify-brave.1.gz"
         man1.install "manpages/meltify-beldex.1.gz"
@@ -137,8 +145,8 @@ class Meltify < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.20/meltify_0.1.20_Linux_x86_64.tar.gz"
-      sha256 "d7df2d920b3fdbeb6a34c0814ce0255e5aed5dc684e2a208e045cb2c9b001473"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.21/meltify_0.1.21_Linux_x86_64.tar.gz"
+      sha256 "dbfaec1911c6daa52e0334550a12887e6bc1b5002664c0d6f2b27280c457846e"
       define_method(:install) do
         bin.install "meltify"
         bin.install "meltify-brave"
@@ -151,6 +159,7 @@ class Meltify < Formula
         bin.install "meltify-rsa"
         bin.install "meltify-dkim"
         bin.install "meltify-dnssec"
+        bin.install "meltify-i2p"
         bash_completion.install "completions/meltify.bash" => "meltify"
         bash_completion.install "completions/meltify-brave.bash" => "meltify-brave"
         bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
@@ -162,6 +171,7 @@ class Meltify < Formula
         bash_completion.install "completions/meltify-rsa.bash" => "meltify-rsa"
         bash_completion.install "completions/meltify-dkim.bash" => "meltify-dkim"
         bash_completion.install "completions/meltify-dnssec.bash" => "meltify-dnssec"
+        bash_completion.install "completions/meltify-i2p.bash" => "meltify-i2p"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
         zsh_completion.install "completions/meltify-brave.zsh" => "_meltify-brave"
         zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
@@ -173,6 +183,7 @@ class Meltify < Formula
         zsh_completion.install "completions/meltify-rsa.zsh" => "_meltify-rsa"
         zsh_completion.install "completions/meltify-dkim.zsh" => "_meltify-dkim"
         zsh_completion.install "completions/meltify-dnssec.zsh" => "_meltify-dnssec"
+        zsh_completion.install "completions/meltify-i2p.zsh" => "_meltify-i2p"
         fish_completion.install "completions/meltify.fish"
         fish_completion.install "completions/meltify-brave.fish"
         fish_completion.install "completions/meltify-beldex.fish"
@@ -184,6 +195,7 @@ class Meltify < Formula
         fish_completion.install "completions/meltify-rsa.fish"
         fish_completion.install "completions/meltify-dkim.fish"
         fish_completion.install "completions/meltify-dnssec.fish"
+        fish_completion.install "completions/meltify-i2p.fish"
         man1.install "manpages/meltify.1.gz"
         man1.install "manpages/meltify-brave.1.gz"
         man1.install "manpages/meltify-beldex.1.gz"
@@ -198,8 +210,8 @@ class Meltify < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.20/meltify_0.1.20_Linux_armv7.tar.gz"
-      sha256 "35b22acd3aebd1adec8661c732e5b30e4e57f9af3b4171fe79a9ce7db7bc8fca"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.21/meltify_0.1.21_Linux_armv7.tar.gz"
+      sha256 "ea174f21c5ef1e5af19ff09174913ac8843e67a110d65ac86d1236476b49f98f"
       define_method(:install) do
         bin.install "meltify"
         bin.install "meltify-brave"
@@ -212,6 +224,7 @@ class Meltify < Formula
         bin.install "meltify-rsa"
         bin.install "meltify-dkim"
         bin.install "meltify-dnssec"
+        bin.install "meltify-i2p"
         bash_completion.install "completions/meltify.bash" => "meltify"
         bash_completion.install "completions/meltify-brave.bash" => "meltify-brave"
         bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
@@ -223,6 +236,7 @@ class Meltify < Formula
         bash_completion.install "completions/meltify-rsa.bash" => "meltify-rsa"
         bash_completion.install "completions/meltify-dkim.bash" => "meltify-dkim"
         bash_completion.install "completions/meltify-dnssec.bash" => "meltify-dnssec"
+        bash_completion.install "completions/meltify-i2p.bash" => "meltify-i2p"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
         zsh_completion.install "completions/meltify-brave.zsh" => "_meltify-brave"
         zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
@@ -234,6 +248,7 @@ class Meltify < Formula
         zsh_completion.install "completions/meltify-rsa.zsh" => "_meltify-rsa"
         zsh_completion.install "completions/meltify-dkim.zsh" => "_meltify-dkim"
         zsh_completion.install "completions/meltify-dnssec.zsh" => "_meltify-dnssec"
+        zsh_completion.install "completions/meltify-i2p.zsh" => "_meltify-i2p"
         fish_completion.install "completions/meltify.fish"
         fish_completion.install "completions/meltify-brave.fish"
         fish_completion.install "completions/meltify-beldex.fish"
@@ -245,6 +260,7 @@ class Meltify < Formula
         fish_completion.install "completions/meltify-rsa.fish"
         fish_completion.install "completions/meltify-dkim.fish"
         fish_completion.install "completions/meltify-dnssec.fish"
+        fish_completion.install "completions/meltify-i2p.fish"
         man1.install "manpages/meltify.1.gz"
         man1.install "manpages/meltify-brave.1.gz"
         man1.install "manpages/meltify-beldex.1.gz"
@@ -259,8 +275,8 @@ class Meltify < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.20/meltify_0.1.20_Linux_arm64.tar.gz"
-      sha256 "97fb438697be6e90126c244e4b68e1fd585e0a6024068635ac8ba24ae0c9c252"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.21/meltify_0.1.21_Linux_arm64.tar.gz"
+      sha256 "20346730438f7f3f266f867ba04cef4a6d8604a98e2483a3ce6670c6e2fdfed1"
       define_method(:install) do
         bin.install "meltify"
         bin.install "meltify-brave"
@@ -273,6 +289,7 @@ class Meltify < Formula
         bin.install "meltify-rsa"
         bin.install "meltify-dkim"
         bin.install "meltify-dnssec"
+        bin.install "meltify-i2p"
         bash_completion.install "completions/meltify.bash" => "meltify"
         bash_completion.install "completions/meltify-brave.bash" => "meltify-brave"
         bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
@@ -284,6 +301,7 @@ class Meltify < Formula
         bash_completion.install "completions/meltify-rsa.bash" => "meltify-rsa"
         bash_completion.install "completions/meltify-dkim.bash" => "meltify-dkim"
         bash_completion.install "completions/meltify-dnssec.bash" => "meltify-dnssec"
+        bash_completion.install "completions/meltify-i2p.bash" => "meltify-i2p"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
         zsh_completion.install "completions/meltify-brave.zsh" => "_meltify-brave"
         zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
@@ -295,6 +313,7 @@ class Meltify < Formula
         zsh_completion.install "completions/meltify-rsa.zsh" => "_meltify-rsa"
         zsh_completion.install "completions/meltify-dkim.zsh" => "_meltify-dkim"
         zsh_completion.install "completions/meltify-dnssec.zsh" => "_meltify-dnssec"
+        zsh_completion.install "completions/meltify-i2p.zsh" => "_meltify-i2p"
         fish_completion.install "completions/meltify.fish"
         fish_completion.install "completions/meltify-brave.fish"
         fish_completion.install "completions/meltify-beldex.fish"
@@ -306,6 +325,7 @@ class Meltify < Formula
         fish_completion.install "completions/meltify-rsa.fish"
         fish_completion.install "completions/meltify-dkim.fish"
         fish_completion.install "completions/meltify-dnssec.fish"
+        fish_completion.install "completions/meltify-i2p.fish"
         man1.install "manpages/meltify.1.gz"
         man1.install "manpages/meltify-brave.1.gz"
         man1.install "manpages/meltify-beldex.1.gz"
