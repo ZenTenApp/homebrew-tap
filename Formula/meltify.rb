@@ -5,13 +5,13 @@
 class Meltify < Formula
   desc "Export compact Nostr/SSH/MELT seed material from Ed25519 OpenSSH keys"
   homepage "https://github.com/ZenTenApp/meltify"
-  version "0.1.25"
+  version "0.1.26"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.25/meltify_0.1.25_Darwin_x86_64.tar.gz"
-      sha256 "e6fea663dc4cbebf236bbbab788a8af0862e0f9bbc65d00a188a520d011acebf"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.26/meltify_0.1.26_Darwin_x86_64.tar.gz"
+      sha256 "4a29375384c1fea4ffceac60e045f3a7798cabd74bc02e953846c00da64a5701"
 
       define_method(:install) do
         bin.install "meltify"
@@ -28,6 +28,7 @@ class Meltify < Formula
         bin.install "meltify-i2p"
         bin.install "meltify-wireguard"
         bin.install "meltify-jks"
+        bin.install "meltify-multisig"
         bash_completion.install "completions/meltify.bash" => "meltify"
         bash_completion.install "completions/meltify-brave.bash" => "meltify-brave"
         bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
@@ -42,6 +43,7 @@ class Meltify < Formula
         bash_completion.install "completions/meltify-i2p.bash" => "meltify-i2p"
         bash_completion.install "completions/meltify-wireguard.bash" => "meltify-wireguard"
         bash_completion.install "completions/meltify-jks.bash" => "meltify-jks"
+        bash_completion.install "completions/meltify-multisig.bash" => "meltify-multisig"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
         zsh_completion.install "completions/meltify-brave.zsh" => "_meltify-brave"
         zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
@@ -56,6 +58,7 @@ class Meltify < Formula
         zsh_completion.install "completions/meltify-i2p.zsh" => "_meltify-i2p"
         zsh_completion.install "completions/meltify-wireguard.zsh" => "_meltify-wireguard"
         zsh_completion.install "completions/meltify-jks.zsh" => "_meltify-jks"
+        zsh_completion.install "completions/meltify-multisig.zsh" => "_meltify-multisig"
         fish_completion.install "completions/meltify.fish"
         fish_completion.install "completions/meltify-brave.fish"
         fish_completion.install "completions/meltify-beldex.fish"
@@ -70,6 +73,7 @@ class Meltify < Formula
         fish_completion.install "completions/meltify-i2p.fish"
         fish_completion.install "completions/meltify-wireguard.fish"
         fish_completion.install "completions/meltify-jks.fish"
+        fish_completion.install "completions/meltify-multisig.fish"
         man1.install "manpages/meltify.1.gz"
         man1.install "manpages/meltify-brave.1.gz"
         man1.install "manpages/meltify-beldex.1.gz"
@@ -84,11 +88,12 @@ class Meltify < Formula
         man1.install "manpages/meltify-i2p.1.gz"
         man1.install "manpages/meltify-wireguard.1.gz"
         man1.install "manpages/meltify-jks.1.gz"
+        man1.install "manpages/meltify-multisig.1.gz"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.25/meltify_0.1.25_Darwin_arm64.tar.gz"
-      sha256 "50d070603880bbce013d9406091016e3caabcbea464950eaf7907d442f558c77"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.26/meltify_0.1.26_Darwin_arm64.tar.gz"
+      sha256 "c04306798c943a0867e343f1164dff06a56a1a5a9c014d4cd73469fd2fde8bf8"
 
       define_method(:install) do
         bin.install "meltify"
@@ -105,6 +110,7 @@ class Meltify < Formula
         bin.install "meltify-i2p"
         bin.install "meltify-wireguard"
         bin.install "meltify-jks"
+        bin.install "meltify-multisig"
         bash_completion.install "completions/meltify.bash" => "meltify"
         bash_completion.install "completions/meltify-brave.bash" => "meltify-brave"
         bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
@@ -119,6 +125,7 @@ class Meltify < Formula
         bash_completion.install "completions/meltify-i2p.bash" => "meltify-i2p"
         bash_completion.install "completions/meltify-wireguard.bash" => "meltify-wireguard"
         bash_completion.install "completions/meltify-jks.bash" => "meltify-jks"
+        bash_completion.install "completions/meltify-multisig.bash" => "meltify-multisig"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
         zsh_completion.install "completions/meltify-brave.zsh" => "_meltify-brave"
         zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
@@ -133,6 +140,7 @@ class Meltify < Formula
         zsh_completion.install "completions/meltify-i2p.zsh" => "_meltify-i2p"
         zsh_completion.install "completions/meltify-wireguard.zsh" => "_meltify-wireguard"
         zsh_completion.install "completions/meltify-jks.zsh" => "_meltify-jks"
+        zsh_completion.install "completions/meltify-multisig.zsh" => "_meltify-multisig"
         fish_completion.install "completions/meltify.fish"
         fish_completion.install "completions/meltify-brave.fish"
         fish_completion.install "completions/meltify-beldex.fish"
@@ -147,6 +155,7 @@ class Meltify < Formula
         fish_completion.install "completions/meltify-i2p.fish"
         fish_completion.install "completions/meltify-wireguard.fish"
         fish_completion.install "completions/meltify-jks.fish"
+        fish_completion.install "completions/meltify-multisig.fish"
         man1.install "manpages/meltify.1.gz"
         man1.install "manpages/meltify-brave.1.gz"
         man1.install "manpages/meltify-beldex.1.gz"
@@ -161,14 +170,15 @@ class Meltify < Formula
         man1.install "manpages/meltify-i2p.1.gz"
         man1.install "manpages/meltify-wireguard.1.gz"
         man1.install "manpages/meltify-jks.1.gz"
+        man1.install "manpages/meltify-multisig.1.gz"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.25/meltify_0.1.25_Linux_x86_64.tar.gz"
-      sha256 "2941ac475ada7393daac0be4be75ece8ee112e63407c0f45fb966ff1f7c3494d"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.26/meltify_0.1.26_Linux_x86_64.tar.gz"
+      sha256 "a59918070fc6cef5bc80dcb4725787b2b4e58119156e29da8df07f3b3cbc64c1"
       define_method(:install) do
         bin.install "meltify"
         bin.install "meltify-brave"
@@ -184,6 +194,7 @@ class Meltify < Formula
         bin.install "meltify-i2p"
         bin.install "meltify-wireguard"
         bin.install "meltify-jks"
+        bin.install "meltify-multisig"
         bash_completion.install "completions/meltify.bash" => "meltify"
         bash_completion.install "completions/meltify-brave.bash" => "meltify-brave"
         bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
@@ -198,6 +209,7 @@ class Meltify < Formula
         bash_completion.install "completions/meltify-i2p.bash" => "meltify-i2p"
         bash_completion.install "completions/meltify-wireguard.bash" => "meltify-wireguard"
         bash_completion.install "completions/meltify-jks.bash" => "meltify-jks"
+        bash_completion.install "completions/meltify-multisig.bash" => "meltify-multisig"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
         zsh_completion.install "completions/meltify-brave.zsh" => "_meltify-brave"
         zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
@@ -212,6 +224,7 @@ class Meltify < Formula
         zsh_completion.install "completions/meltify-i2p.zsh" => "_meltify-i2p"
         zsh_completion.install "completions/meltify-wireguard.zsh" => "_meltify-wireguard"
         zsh_completion.install "completions/meltify-jks.zsh" => "_meltify-jks"
+        zsh_completion.install "completions/meltify-multisig.zsh" => "_meltify-multisig"
         fish_completion.install "completions/meltify.fish"
         fish_completion.install "completions/meltify-brave.fish"
         fish_completion.install "completions/meltify-beldex.fish"
@@ -226,6 +239,7 @@ class Meltify < Formula
         fish_completion.install "completions/meltify-i2p.fish"
         fish_completion.install "completions/meltify-wireguard.fish"
         fish_completion.install "completions/meltify-jks.fish"
+        fish_completion.install "completions/meltify-multisig.fish"
         man1.install "manpages/meltify.1.gz"
         man1.install "manpages/meltify-brave.1.gz"
         man1.install "manpages/meltify-beldex.1.gz"
@@ -240,11 +254,12 @@ class Meltify < Formula
         man1.install "manpages/meltify-i2p.1.gz"
         man1.install "manpages/meltify-wireguard.1.gz"
         man1.install "manpages/meltify-jks.1.gz"
+        man1.install "manpages/meltify-multisig.1.gz"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.25/meltify_0.1.25_Linux_armv7.tar.gz"
-      sha256 "687cb4d7853d882e9bedaeaaf13b2dd73d0781f6e19e128eee4d27313706b91a"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.26/meltify_0.1.26_Linux_armv7.tar.gz"
+      sha256 "49a14cceb635cb96d4726e0b0cc84eed9e3dc0b23d4e9087c34949813afa502b"
       define_method(:install) do
         bin.install "meltify"
         bin.install "meltify-brave"
@@ -260,6 +275,7 @@ class Meltify < Formula
         bin.install "meltify-i2p"
         bin.install "meltify-wireguard"
         bin.install "meltify-jks"
+        bin.install "meltify-multisig"
         bash_completion.install "completions/meltify.bash" => "meltify"
         bash_completion.install "completions/meltify-brave.bash" => "meltify-brave"
         bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
@@ -274,6 +290,7 @@ class Meltify < Formula
         bash_completion.install "completions/meltify-i2p.bash" => "meltify-i2p"
         bash_completion.install "completions/meltify-wireguard.bash" => "meltify-wireguard"
         bash_completion.install "completions/meltify-jks.bash" => "meltify-jks"
+        bash_completion.install "completions/meltify-multisig.bash" => "meltify-multisig"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
         zsh_completion.install "completions/meltify-brave.zsh" => "_meltify-brave"
         zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
@@ -288,6 +305,7 @@ class Meltify < Formula
         zsh_completion.install "completions/meltify-i2p.zsh" => "_meltify-i2p"
         zsh_completion.install "completions/meltify-wireguard.zsh" => "_meltify-wireguard"
         zsh_completion.install "completions/meltify-jks.zsh" => "_meltify-jks"
+        zsh_completion.install "completions/meltify-multisig.zsh" => "_meltify-multisig"
         fish_completion.install "completions/meltify.fish"
         fish_completion.install "completions/meltify-brave.fish"
         fish_completion.install "completions/meltify-beldex.fish"
@@ -302,6 +320,7 @@ class Meltify < Formula
         fish_completion.install "completions/meltify-i2p.fish"
         fish_completion.install "completions/meltify-wireguard.fish"
         fish_completion.install "completions/meltify-jks.fish"
+        fish_completion.install "completions/meltify-multisig.fish"
         man1.install "manpages/meltify.1.gz"
         man1.install "manpages/meltify-brave.1.gz"
         man1.install "manpages/meltify-beldex.1.gz"
@@ -316,11 +335,12 @@ class Meltify < Formula
         man1.install "manpages/meltify-i2p.1.gz"
         man1.install "manpages/meltify-wireguard.1.gz"
         man1.install "manpages/meltify-jks.1.gz"
+        man1.install "manpages/meltify-multisig.1.gz"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.25/meltify_0.1.25_Linux_arm64.tar.gz"
-      sha256 "e8c650ed77b69dd0ec0d0a04d11b8de87be60cc7a7a99a29c88148cae6bc3736"
+      url "https://github.com/ZenTenApp/meltify/releases/download/v0.1.26/meltify_0.1.26_Linux_arm64.tar.gz"
+      sha256 "58bdc54340a8574774824b1cd8497d906963c8e5adaa4dcd39520b7198dece88"
       define_method(:install) do
         bin.install "meltify"
         bin.install "meltify-brave"
@@ -336,6 +356,7 @@ class Meltify < Formula
         bin.install "meltify-i2p"
         bin.install "meltify-wireguard"
         bin.install "meltify-jks"
+        bin.install "meltify-multisig"
         bash_completion.install "completions/meltify.bash" => "meltify"
         bash_completion.install "completions/meltify-brave.bash" => "meltify-brave"
         bash_completion.install "completions/meltify-beldex.bash" => "meltify-beldex"
@@ -350,6 +371,7 @@ class Meltify < Formula
         bash_completion.install "completions/meltify-i2p.bash" => "meltify-i2p"
         bash_completion.install "completions/meltify-wireguard.bash" => "meltify-wireguard"
         bash_completion.install "completions/meltify-jks.bash" => "meltify-jks"
+        bash_completion.install "completions/meltify-multisig.bash" => "meltify-multisig"
         zsh_completion.install "completions/meltify.zsh" => "_meltify"
         zsh_completion.install "completions/meltify-brave.zsh" => "_meltify-brave"
         zsh_completion.install "completions/meltify-beldex.zsh" => "_meltify-beldex"
@@ -364,6 +386,7 @@ class Meltify < Formula
         zsh_completion.install "completions/meltify-i2p.zsh" => "_meltify-i2p"
         zsh_completion.install "completions/meltify-wireguard.zsh" => "_meltify-wireguard"
         zsh_completion.install "completions/meltify-jks.zsh" => "_meltify-jks"
+        zsh_completion.install "completions/meltify-multisig.zsh" => "_meltify-multisig"
         fish_completion.install "completions/meltify.fish"
         fish_completion.install "completions/meltify-brave.fish"
         fish_completion.install "completions/meltify-beldex.fish"
@@ -378,6 +401,7 @@ class Meltify < Formula
         fish_completion.install "completions/meltify-i2p.fish"
         fish_completion.install "completions/meltify-wireguard.fish"
         fish_completion.install "completions/meltify-jks.fish"
+        fish_completion.install "completions/meltify-multisig.fish"
         man1.install "manpages/meltify.1.gz"
         man1.install "manpages/meltify-brave.1.gz"
         man1.install "manpages/meltify-beldex.1.gz"
@@ -392,6 +416,7 @@ class Meltify < Formula
         man1.install "manpages/meltify-i2p.1.gz"
         man1.install "manpages/meltify-wireguard.1.gz"
         man1.install "manpages/meltify-jks.1.gz"
+        man1.install "manpages/meltify-multisig.1.gz"
       end
     end
   end
